@@ -1,0 +1,11 @@
+[Unit]
+Description=Environmmental Monitoring Service
+After=syslog.target network.target
+
+[Service]
+EnvironmentFile=/opt/envmon.env
+Restart=always
+ExecStart=/usr/local/bin/envmon.py
+
+[Install]
+WantedBy=multi-user.target
